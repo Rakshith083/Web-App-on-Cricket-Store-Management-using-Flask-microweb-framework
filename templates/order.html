@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: large;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-size: large;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 10%;
+  margin-top: 6px;
+  
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+<center><h2>Order details</h2></center>
+<div class="container">
+  <form method = "post" action = "/order">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Customer Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="name" placeholder="Your name.." value="{{name}}" readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">E-mail</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="mail" placeholder="Your E-mail." value="{{mail}}" readonly>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="lname">Phone</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="phone" placeholder="Your contsct no.." value="{{phone}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Order Id</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="oid" placeholder="order id.." value="{{oid}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Product Id</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="serial" placeholder="Product Id" value="{{sn}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Product</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="product" placeholder="ordered product" value="{{pt}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Brand</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="brand" placeholder="Product brand.." value="{{br}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Model</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="model" placeholder="product brand model" value="{{mdl}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Price</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="price" placeholder="Your last name.." value="{{prc}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Ordered Date</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="odate" placeholder="Ordered dare.." value="{{orddate}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Quantity</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="odate" placeholder="Ordered dare.." value="{{q}}" readonly>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Delivery date</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="ddate" placeholder="delivery date.." value="{{deldate}}" readonly>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Address</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject"  name="address" placeholder="Enter address.." style="height:200px" required style="font-size: larger;">{{add}}</textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Place Order">
+    </div>
+  </form>
+</div>
+</body>
+</html>

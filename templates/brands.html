@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  font-family: inherit;
+  margin: 0;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+<form action="">
+<div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Products 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/BAT">BATS</a>
+      <a href="/BALL">BALL</a>
+      <a href="/WICKET">WICKETS</a>
+      <a href="/GLOVES">GLOVES</a>
+      <a href="/HELMET">HELMETS</a>
+      <a href="/KITBAG">KITBAGS</a>
+      <a href="/PAD">PADS</a>
+      <a href="/SHIRT">SHIRTS</a>
+      <a href="/PANT">PANTS</a>
+      <a href="/SHOES">SHOES</a>
+    </div>
+  </div> 
+  <a href="/myorders/{{acc}}"">My orders</a>
+  <a href="/profileupdate/{{acc}}">Account update</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="/logout">Log out</a>
+</div>
+<form action="">
+<h3 style="color: #333 ;">logged in as : {{acc}}</h3> <br>
+<hr>
+<h2>Showing Brands for {{item}},...Select Brand To Continue...</h2><hr>
+<center>
+  <table>
+    <tr>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/ADIDAS" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='adidas.jpg')}}" alt="adidas" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/MRF" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='MRF.jpg')}}" alt="MRF" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/REEBOK" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='reebok.png')}}" alt="reebok" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/PUMA" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='puma.png')}}" alt="puma" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/COSCO" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='cosko.jpg')}}" alt="cosco" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/NEWBALANCE" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='newbalance.png')}}" alt="newbalance" width="240" height="295"></a></td>
+    </tr>
+  </table>
+  <hr>
+  <table>
+    <tr>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/SPARTAN" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='spartan.jpg')}}" alt="spartan" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/GORTONSHIRE" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='gortonshire.webp')}}" alt="gortonshire" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/BDM" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='bdm.webp')}}" alt="bdm" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/CEAT" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='ceat.webp')}}" alt="ceat" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/DSC" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='dsc.webp')}}" alt="dcs" width="240" height="295"></a></td>
+      <td><a href="http://127.0.0.1:5000/show/{{item}}/GM" style="color: black; text-decoration: none;"><img src="{{url_for('static',filename='gm.webp')}}" alt="gm" width="240" height="295"></a></td>
+    </tr>
+  </table>
+</center>
+  <hr>
+  <a href="http://127.0.0.1:5000/products">BACK</a><br>
+</form>
+</body>
+</html>

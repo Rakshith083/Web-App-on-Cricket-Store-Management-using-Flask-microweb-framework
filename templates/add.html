@@ -1,0 +1,20 @@
+<html>  
+<head>  
+    <title>Add product</title>  
+</head>  
+<body>  
+    
+    <form method = "post" action = "/add">  
+        <table>  
+            <tr><td>Serial_no</td><td><input type = 'number' name = 'serial' value="{{sn}}"></td></tr>  
+            <tr><td>Product type</td><td><input type = 'text' name = 'product' value="BAT" ></td></tr>
+            <tr><td>Brand</td><td><input type = 'text' name = 'brand' ></td></tr>  
+            <tr><td>Model</td><td><input type = 'text' name = 'model' ></td></tr>    
+            <tr><td>Price</td><td><input type = 'text' name = 'price' value=" /- Rs" style="text-align: right;"></td></tr>
+            <tr><td>Weight</td><td><input type = 'text' name = 'weight' value=" Kg" style="text-align: right;"></td></tr>
+            <tr><td>Stocks</td><td><input type = 'number' name = 'stocks'></td></tr>
+            <tr><td><input type = "submit" value = "Submit"></td></tr>  
+        </table>  
+    </form>  
+</body>  
+</html>  
